@@ -44,6 +44,9 @@ VALUES
     (2, 'Mushroom Kingdom'),
     (3, 'Mushroom Kingdom');
 
+UPDATE test SET test_name='Koopa Kingdom' WHERE test_id=1;
+
+SELECT * FROM test ORDER BY test_id;
 
 ALTER TABLE test DROP COLUMN test_name;
 ALTER TABLE test DROP COLUMN test_id;
