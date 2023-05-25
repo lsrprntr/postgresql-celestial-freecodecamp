@@ -11,6 +11,11 @@ psql --username=freecodecamp --dbname=postgres
 CREATE DATABASE universe;
 \c universe
 
+/*
+\l lists databases/tables in directory
+\d lists databases/tables in directory, search with table_name to get column data
+*/
+
 /* Initial creation of tables with columns */
 CREATE TABLE galaxy(galaxy_id INT UNIQUE PRIMARY KEY NOT NULL, name VARCHAR(30) NOT NULL);
 CREATE TABLE stars();
@@ -18,3 +23,10 @@ CREATE TABLE planets();
 CREATE TABLE moon();
 
 
+/* Testing */
+CREATE TABLE test();
+ALTER TABLE test ADD COLUMN testcolumn_id INT;
+ALTER TABLE test ADD COLUMN test_name VARCHAR(30);
+ALTER TABLE test RENAME COLUMN testcolumn_id TO test_id;
+ALTER TABLE test DROP COLUMN test_id;
+INSERT INTO test(test_id, test_name) VALUES(1, "texttext");
