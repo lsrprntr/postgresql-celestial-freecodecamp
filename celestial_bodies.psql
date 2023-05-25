@@ -24,9 +24,35 @@ CREATE TABLE moon();
 
 
 /* Testing */
+CREATE DATABASE testdb;
+\c testdb;
 CREATE TABLE test();
-ALTER TABLE test ADD COLUMN testcolumn_id INT;
+ALTER TABLE test ADD COLUMN column_id SERIAL;
+ALTER TABLE test ADD COLUMN test_id INT NOT NULL;
 ALTER TABLE test ADD COLUMN test_name VARCHAR(30);
+
 ALTER TABLE test RENAME COLUMN testcolumn_id TO test_id;
+
+INSERT INTO test(test_id, test_name) VALUES(1, 'texttext');
+INSERT INTO test(test_id, test_name) VALUES(2, 'texttext2');
+DELETE FROM test WHERE test_name='texttext2'
+
+INSERT INTO 
+    test(test_id, test_name)
+VALUES
+    (1, 'Mushroom Kingdom'),
+    (2, 'Mushroom Kingdom'),
+    (3, 'Mushroom Kingdom');
+
+
+ALTER TABLE test DROP COLUMN test_name;
 ALTER TABLE test DROP COLUMN test_id;
-INSERT INTO test(test_id, test_name) VALUES(1, "texttext");
+
+DROP TABLE test;
+
+ALTER DATABASE testdb RENAME TO testdb2;
+DROP DATABASE testdb2;
+
+
+
+
