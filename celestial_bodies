@@ -1,0 +1,20 @@
+/*---postgreSQL---*/
+/* list of commands used to achieve the celestial-bodies project on freecodecamp
+*  
+*  
+*/
+
+/* Connecting to psql interface */
+psql --username=freecodecamp --dbname=postgres
+
+/* Creating Database and connecting to it */
+CREATE DATABASE universe;
+\c universe
+
+/* Initial creation of tables with columns */
+CREATE TABLE galaxy(galaxy_id INT UNIQUE PRIMARY KEY NOT NULL, name VARCHAR(30) NOT NULL);
+CREATE TABLE stars();
+CREATE TABLE planets();
+CREATE TABLE moon();
+
+
